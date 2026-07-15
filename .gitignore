@@ -4,6 +4,23 @@ __pycache__/
 .pytest_cache/
 *.pyc
 
+# E-drive isolation runtime (local only; do not commit)
+.home/
+.tmp/
+.uv-cache/
+.uv-python/
+.uv-python-bin/
+.uv-tools/
+.uv-tool-bin/
+.python-user/
+.pycache/
+.xdg/
+.cargo/
+.rustup/
+# note: root .cache/ already ignored above in this file on some versions;
+# keep explicit isolation dirs for clarity
+
+
 # Coverage reports
 .coverage
 coverage.xml
@@ -51,7 +68,9 @@ data/parquet/
 data/backup/
 
 # Internal docs (plans, specs)
-docs/
+# 忽略 docs 下内容，但保留目录可遍历，以便放行本 fork 手册
+docs/*
+!docs/WINDOWS-E-DRIVE-USAGE.zh-cn.md
 !wiki/docs/
 !wiki/docs/**
 docs/screenshots/agent-run.png
